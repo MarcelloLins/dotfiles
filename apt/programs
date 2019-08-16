@@ -1,3 +1,11 @@
+" Midnight Commander File Manager
 apt install mc
+
+" Wallpaper  manager for i3
 apt install feh
+
+# I3 Windows Manager
 apt install i3
+
+" Controls for audio and media keys on laptops
+apt-get install xbacklight alsa-utils pulseaudio
