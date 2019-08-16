@@ -1,1 +1,3 @@
-apt-install mc
+apt install mc
+apt install feh
+apt install i3
