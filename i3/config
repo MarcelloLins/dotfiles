@@ -76,10 +76,11 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Workspace naming
-set $workspace1 "1: Communication"
-set $workspace2 "2: Shells"
-set $workspace3 "3: Code"
-set $workspace4 "4: Database"
+set $workspace1 "1: Email "
+set $workspace2 "2: Terminal "
+set $workspace3 "3: Code "
+set $workspace4 "4: Chrome "
+set $workspace5 "5: Database "
 
 
 # Workspace Switching 
@@ -87,7 +88,7 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace 5
+bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -99,7 +100,7 @@ bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -109,6 +110,17 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Applications Assignment
 for_window [title="IntelliJ IDEA"] move to workspace $workspace3
 for_window [title="DataGrip"] move to workspace $workspace4
+for_window [title="Amazon Chime"] move to workspace $workspace1
+for_window [title="Lins, Marcello - Outlook Web App"] move to workspace $workspace1
+assign [class="AmazonChime"] $workspace1
+assign [class="Google-chrome"] $workspace4
+
+# Binding Workspaces to Specific Monitors
+workspace $workspace1 output DP1-2
+workspace $workspace2 output DP1-1
+workspace $workspace3 output DP1-1
+workspace $workspace4 output eDP1
+workspace $workspace5 output DP1-1
 
 
 # Reload Configuration 
@@ -174,5 +186,8 @@ bar {
 
 # Wallpaper loading
 exec_always feh --randomize --bg-fill ~/Pictures/Wallpapers/*
+
+# Multi Monitor Setup
+exec --no-startup-id xrandr --output DP1-1 --auto --left-of DP1-2 --output DP1-2 --auto --above eDP1 --output eDP1 --auto --below DP-2
 
 
