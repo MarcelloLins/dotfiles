@@ -8,4 +8,7 @@ apt install feh
 apt install i3
 
 " Controls for audio and media keys on laptops
-apt-get install xbacklight alsa-utils pulseaudio
+apt install xbacklight alsa-utils pulseaudio
+
+" Clipboard Manager
+apt install clipit
