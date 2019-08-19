@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Meslo LG S for Powerline Bold 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -79,7 +79,7 @@ bindsym $mod+a focus parent
 set $workspace1 "1: Email "
 set $workspace2 "2: Terminal "
 set $workspace3 "3: Code "
-set $workspace4 "4: Chrome "
+set $workspace4 "4: Chrome "
 set $workspace5 "5: Database "
 
 
@@ -159,6 +159,9 @@ mode "resize" {
 # Resize
 bindsym $mod+r mode "resize"
 
+# Keybind for Lock with Wallpaper
+bindsym $mod+Shift+l exec --no-startup-id i3lock -i $(ls ~/Pictures/Wallpapers | shuf -n 1)
+
 # Media, Volume and Playback Keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
@@ -188,6 +191,6 @@ bar {
 exec_always feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
 # Multi Monitor Setup
-exec --no-startup-id xrandr --output DP1-1 --auto --left-of DP1-2 --output DP1-2 --auto --above eDP1 --output eDP1 --auto --below DP-2
+exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1504x1440 --rotate normal --output DP1 --off     --output HDMI2 --off --output HDMI1 --off --output DP1-3 --off --output DP1-2 --mode 2560x1440 --pos 0x0 --rotate normal     --output DP1-1 --mode 2560x1440 --pos 2560x0 --rotate normal --output DP2 --off
 
 
