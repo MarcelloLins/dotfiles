@@ -194,10 +194,16 @@ exec_always feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1504x1440 --rotate normal --output DP1 --off     --output HDMI2 --off --output HDMI1 --off --output DP1-3 --off --output DP1-2 --mode 2560x1440 --pos 0x0 --rotate normal     --output DP1-1 --mode 2560x1440 --pos 2560x0 --rotate normal --output DP2 --off
 
 # Keyboard Layout Change
-exec --no-startup-id setxkbmap -layout pt -variant nativo -option 'grp:alt_shift_toggle'
+#exec --no-startup-id setxkbmap -layout pt -variant nativo -option 'grp:alt_shift_toggle'
 
 # Printscreen hotkey
 bindsym Shift+Print exec gnome-screenshot -i
 
 # Clipboard Manager 
 exec --no-startup-id clipit
+
+# Enabling Wifi
+exec --no-startup-id sudo systemctl enable NetworkManager.service
+
+# Setting keyboard to allow portuguese/latin punctuation
+exec_always --no-startup-id "setxkbmap -layout us -variant intl"

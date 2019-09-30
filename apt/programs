@@ -12,3 +12,9 @@ apt install xbacklight alsa-utils pulseaudio
 
 " Clipboard Manager
 apt install clipit
+
+" Rofi (for i3 dmenu)
+apt install rofi
+
+" bat (cat replacement) https://github.com/sharkdp/bat#installation
+
