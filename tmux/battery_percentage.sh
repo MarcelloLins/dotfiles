@@ -4,6 +4,12 @@ HEART='♥'
 current_charge=$(cat /sys/class/power_supply/BAT0/capacity)
 heart_slots=10
 
+if [[ $current_charge -eq 100 ]]
+then
+	echo "$HEART 100%"
+	exit 0
+fi	
+
 # Math for charged hearts
 charged_hearts=$(echo "($current_charge/$heart_slots)+1" | bc -l | cut -d '.' -f1)
 
