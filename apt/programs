@@ -18,3 +18,7 @@ apt install rofi
 
 " bat (cat replacement) https://github.com/sharkdp/bat#installation
 
+" ncdu (replacement for du)
+apt install ncdu
++
+alias du="ncdu -rr -x --exclude .git --exclude node_modules"
