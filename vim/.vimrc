@@ -14,6 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " List of Plugins to Install via Vundle
 Plugin 'itchyny/lightline.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'surround.vim'
 
 " For plugins to load correctly
 call vundle#end()        
@@ -22,6 +24,20 @@ filetype plugin indent on
 " Turn on syntax highlighting
 syntax on
 
+" Show line numbers
+set number
+
+" Cursor motion
+set scrolloff=3
+set backspace=indent,eol,start
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+
 " Lightline status bar configuration
 set laststatus=2
-let g:lightline = {'colorscheme':'solarized dark'}
+let g:lightline = {'colorscheme':'solarized'}
