@@ -1,0 +1,163 @@
+#
+# Sets Prezto options.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+
+#
+# General
+#
+
+# Color output (auto set to 'no' on dumb terminals).
+zstyle ':prezto:*:*' color 'yes'
+
+# Add additional directories to load prezto modules from
+# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+
+# Set the Zsh modules to load (man zshmodules).
+# zstyle ':prezto:load' zmodule 'attr' 'stat'
+
+# Set the Zsh functions to load (man zshcontrib).
+# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+
+# Set the Prezto modules to load (browse modules).
+# The order matters.
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'prompt' \
+  'tmux'
+
+#
+# Autosuggestions
+#
+
+#
+# Completions
+#
+
+#
+# Editor
+#
+
+# Set the key mapping style to 'emacs' or 'vi'.
+zstyle ':prezto:module:editor' key-bindings 'vi'
+
+# Auto convert .... to ../..
+# zstyle ':prezto:module:editor' dot-expansion 'yes'
+
+# Allow the zsh prompt context to be shown.
+#zstyle ':prezto:module:editor' ps-context 'yes'
+
+# Set the prompt theme to load.
+# Setting it to 'random' loads a random theme.
+# Auto set to 'off' on dumb terminals.
+zstyle ':prezto:module:prompt' theme 'agnoster'
+
+# Set the working directory prompt display length.
+# By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
+# for longer or 'full' (with '~' expansion) for even longer prompt display.
+# zstyle ':prezto:module:prompt' pwd-length 'short'
+
+# Set the prompt to display the return code along with an indicator for non-zero
+# return codes. This is not supported by all prompts.
+# zstyle ':prezto:module:prompt' show-return-val 'yes'
+
+#
+# Python
+#
+
+# Auto switch the Python virtualenv on directory change.
+zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
+
+# Automatically initialize virtualenvwrapper if pre-requisites are met.
+# zstyle ':prezto:module:python:virtualenv' initialize 'yes'
+
+#
+# Ruby
+#
+
+# Auto switch the Ruby version on directory change.
+zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+
+#
+# Terminal
+#
+
+# Auto set the tab and window titles.
+# zstyle ':prezto:module:terminal' auto-title 'yes'
+
+# Set the window title format.
+# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+
+# Set the tab title format.
+# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+
+# Set the terminal multiplexer title format.
+# zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+
+#
+# Tmux
+#
+
+# Auto start a session when Zsh is launched in a local terminal.
+# zstyle ':prezto:module:tmux:auto-start' local 'yes'
+
+# Auto start a session when Zsh is launched in a SSH connection.
+# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+
+# Integrate with iTerm2.
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+# Set the default session name:
+zstyle ':prezto:module:tmux:session' name 'Welcome'
+
+# FZF Parameters
+# Use keybindings
+zstyle ':prezto:module:fzf' key-bindings 'yes'
+
+# Use completion
+zstyle ':prezto:module:fzf' completion 'yes'
+
+# Set height of the fzf results (comment for full screen)
+zstyle ':prezto:module:fzf' height '30%'
+
+# Open fzf results in a tmux pane (if using tmux)
+zstyle ':prezto:module:fzf' tmux 'yes'
+
+# Set colorscheme
+# A list of available colorschemes is available in color.zsh
+# To add more color schemes of your own, consult
+# https://github.com/junegunn/fzf/wiki/Color-schemes and add values to the
+# color.zsh file accordingly
+zstyle ':prezto:module:fzf' colorscheme 'Solarized Light'
+
+# [FZF] Opens file with vscode
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+
+# Aliases
+alias bb='brazil-build'
+alias bbb='brazil-build build'
+alias bbc='brazil-build clean'
+alias bbr='brazil-build-rainbow'
+alias bbrb='brazil-build-rainbow build'
+alias bws='brazil workspace --sync --md'
+alias cll='clear && ll'
+alias cls='clear && ls'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias gs='git status'
+alias yubikey='eval "ssh-agent -s" && mwinit && ssh-add'
+alias mux='tmuxinator'
+
+# Tmuxinator Config
+source ~/Workspaces/Github/dotfiles/tmux/tmuxinator-completion.zsh
+
+# Path Variable Extension
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+export PATH=$HOME/.toolbox/bin:$PATH
