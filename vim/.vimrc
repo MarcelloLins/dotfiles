@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'surround.vim'
+Plugin 'ericbn/vim-relativize'
 
 " For plugins to load correctly
 call vundle#end()        
@@ -24,8 +25,8 @@ filetype plugin indent on
 " Turn on syntax highlighting
 syntax on
 
-" Show line numbers
-set number
+" Shows absolute and relative line numbers
+set number relativenumber
 
 " Cursor motion
 set scrolloff=3

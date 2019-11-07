@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HEART='♥'
-current_charge=$(cat /sys/class/power_supply/BAT0/capacity)
+current_charge=$(pmset -g batt | egrep "([0-9]+\%).*" | cut -f1 -d '%' | cut -f2)
 heart_slots=10
 
 if [[ $current_charge -eq 100 ]]
