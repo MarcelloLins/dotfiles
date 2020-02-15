@@ -22,3 +22,12 @@ apt install rofi
 apt install ncdu
 +
 alias du="ncdu -rr -x --exclude .git --exclude node_modules"
+
+# Gogh Terminal Theme Manager
+https://github.com/Mayccoll/Gogh
+
+# Zprezto
+https://github.com/sorin-ionescu/prezto
+
+# Powerline fonts
+sudo apt-get install fonts-powerline
